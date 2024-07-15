@@ -5,7 +5,7 @@
   "private": "true",
   "scripts": {
     "prestart": "npm run build && func extensions install",
-    "start": "func start",
+    "start": "func host start --watch",
     "prebuild": "npm run lint",
     "build": "tsc",
     "watch": "tsc --w",
@@ -15,12 +15,17 @@
     "test": "echo \"No tests yet... :)\""
   },
   "dependencies": {
-    "@azure/functions": "^1.0.3",
+    "@azure/functions": "1.0",
+    "axios": "^1.7.2",
     "azure-storage": "^2.10.2",
     "inversify": "^5.0.1",
-    "reflect-metadata": "^0.1.13"
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/lodash": "^4.17.6",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/eslint-plugin-tslint": "^7.0.2",
     "@typescript-eslint/parser": "^7.16.0",
@@ -29,7 +34,6 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.7.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
-    "tslint": "^5.16.0",
-    "typescript": "^3.4.5"
+    "typescript": "^5.5.3"
   }
 }

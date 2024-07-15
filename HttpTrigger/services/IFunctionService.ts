@@ -1,3 +1,7 @@
-export interface IFunctionService<T> {
-    processMessageAsync(message: T): Promise<any>
+import { IProcessMessageAsyncRequest } from "../types/IFunctionServiceRequests";
+
+export interface IFunctionService {
+  getPokemonsByIdsAndTypeCriteria(
+    request: IProcessMessageAsyncRequest
+  ): Promise<string[]>
 }

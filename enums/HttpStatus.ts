@@ -1,0 +1,6 @@
+export enum HttpStatus {
+  OK = 20,
+  BAD_REQUEST = 400,
+  UNPROCESSABLE_ENTITY = 422,
+  INTERNAL_ERROR = 500,
+}
