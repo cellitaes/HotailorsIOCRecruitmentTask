@@ -1,5 +1,6 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BaseNamingConventionRuleWalk = void 0;
 var ts = require("typescript");
 var tsutils_1 = require("tsutils");
 var BaseNamingConventionRuleWalk = /** @class */ (function () {
@@ -13,15 +14,14 @@ var BaseNamingConventionRuleWalk = /** @class */ (function () {
             traverse(ctx.sourceFile);
         };
     }
-
     BaseNamingConventionRuleWalk.prototype.memberIsPrivate = function (node) {
-        return tsutils_1.hasModifier(node.modifiers, ts.SyntaxKind.PrivateKeyword);
+        return (0, tsutils_1.hasModifier)(node.modifiers, ts.SyntaxKind.PrivateKeyword);
     };
     BaseNamingConventionRuleWalk.prototype.memberIsStatic = function (node) {
-        return tsutils_1.hasModifier(node.modifiers, ts.SyntaxKind.StaticKeyword);
+        return (0, tsutils_1.hasModifier)(node.modifiers, ts.SyntaxKind.StaticKeyword);
     };
     BaseNamingConventionRuleWalk.prototype.memberIsReadonly = function (node) {
-        return tsutils_1.hasModifier(node.modifiers, ts.SyntaxKind.ReadonlyKeyword);
+        return (0, tsutils_1.hasModifier)(node.modifiers, ts.SyntaxKind.ReadonlyKeyword);
     };
     BaseNamingConventionRuleWalk.prototype.nameIsIdentifier = function (node) {
         return node.kind === ts.SyntaxKind.Identifier;
