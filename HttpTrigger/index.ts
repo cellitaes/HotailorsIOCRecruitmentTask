@@ -1,7 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { Container } from "inversify";
-import { ILogger } from "../commonServices/ILogger";
-import { Logger } from "../commonServices/Logger";
 import { COMMON_TYPES } from "../ioc/commonTypes";
 import getContainer from "../ioc/inversify.config";
 import { IPokemonsQueryValidator } from "../validators/requests/types/IPokemonsQueryValidator";
@@ -17,8 +15,6 @@ const httpTrigger: AzureFunction = async (
   req: HttpRequest
 ): Promise<any> => {
   const container: Container = getContainer();
-  const logger: Logger = container.get<ILogger>(COMMON_TYPES.ILogger) as Logger;
-  logger.init(ctx, "1");
 
   const functionService: IFunctionService = container.get<IFunctionService>(
     COMMON_TYPES.IFunctionService
